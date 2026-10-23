@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Quizora'26 | Welcome</title>
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="login.css">
+
+<link rel="stylesheet" href="nav.css">
+</head>
+
+<body data-back="index.html" data-back-label="Home">
+
+<!--==========================
+        BACKGROUND
+===========================-->
+
+<div class="bg-shape shape-1"></div>
+
+<div class="bg-shape shape-2"></div>
+
+<div class="bg-shape shape-3"></div>
+
+
+<!-- Toast -->
+
+<div id="toast"></div>
+
+
+<!--==========================
+      MAIN CONTAINER
+===========================-->
+
+<section class="login-page">
+
+
+<!--==========================
+      LEFT SIDE
+===========================-->
+
+<div class="left-panel">
+
+
+<div class="brand">
+
+<h1>
+
+Quizora<span>'26</span>
+
+</h1>
+
+<div class="brand-line"></div>
+
+<p>
+
+Where Knowledge Meets Excellence
+
+</p>
+
+</div>
+
+
+
+<div class="hero-content">
+
+<h2>
+
+Challenge Your Mind.<br>
+
+Create Your Legacy.
+
+</h2>
+
+<p>
+
+Join Quizora'26, a premium national-level quiz experience
+crafted for curious minds, future innovators and passionate
+problem solvers.
+
+</p>
+
+</div>
+
+
+
+<!-- Feature Cards -->
+
+<div class="features">
+
+
+<div class="feature-card">
+
+<div class="icon">
+
+<i class="fa-solid fa-trophy"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+National Level Event
+
+</h3>
+
+<p>
+
+Compete with talented participants
+from different colleges.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<div class="icon">
+
+<i class="fa-solid fa-clock"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+10 Questions
+
+</h3>
+
+<p>
+
+Complete every challenge within
+2 minutes.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<div class="icon">
+
+<i class="fa-solid fa-award"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Digital Certificate
+
+</h3>
+
+<p>
+
+Receive your personalized certificate
+after completing the quiz.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- RIGHT PANEL STARTS HERE -->
+<div class="right-panel">
+    <!--==========================
+        LOGIN CARD
+===========================-->
+
+<div class="login-card">
+
+    <div class="login-header">
+
+        <span class="badge">
+
+            <i class="fa-solid fa-star"></i>
+
+            Quiz Registration
+
+        </span>
+
+        <h2>
+
+            Welcome Back
+
+        </h2>
+
+        <p>
+
+            Enter your details below to begin your Quizora'26 journey.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- Login Form -->
+
+    <form id="loginForm">
+
+        <!-- First Name -->
+
+        <div class="input-group">
+
+            <label for="firstName">
+
+                First Name
+
+            </label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input
+                    type="text"
+                    id="firstName"
+                    placeholder="Enter your first name"
+                    autocomplete="given-name"
+                    required>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Last Name -->
+
+        <div class="input-group">
+
+            <label for="lastName">
+
+                Last Name
+
+            </label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Enter your last name"
+                    autocomplete="family-name"
+                    required>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Date of Birth -->
+
+        <div class="input-group">
+
+            <label for="dob">
+
+                Date of Birth
+
+            </label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <input
+                    type="date"
+                    id="dob"
+                    required>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Button -->
+
+        <button
+            type="submit"
+            class="login-btn">
+
+            <span>
+
+                Begin Experience
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </form>
+
+
+
+    <!-- Footer -->
+
+    <div class="login-footer">
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+
+                Secure Registration
+
+            </span>
+
+        </div>
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <span>
+
+                Your information is used only for Quizora'26 participation.
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="db.js"></script>
+<script src="login.js"></script>
+
+<script src="nav.js"></script>
+</body>
+
+</html>

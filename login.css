@@ -1,0 +1,2923 @@
+/*====================================
+        GOOGLE FONT
+====================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/*====================================
+        RESET
+====================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#FFFFFF;
+
+    color:#0F172A;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/*====================================
+        BACKGROUND SHAPES
+====================================*/
+
+
+.bg-shape{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    z-index:-2;
+
+}
+
+
+
+.shape-1{
+
+    width:350px;
+
+    height:350px;
+
+    background:#DBEAFE;
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+
+
+.shape-2{
+
+    width:300px;
+
+    height:300px;
+
+    background:#E0E7FF;
+
+    bottom:-100px;
+
+    right:-100px;
+
+}
+
+
+
+.shape-3{
+
+    width:200px;
+
+    height:200px;
+
+    background:#F8FAFC;
+
+    top:45%;
+
+    left:50%;
+
+}
+
+
+
+
+/*====================================
+        BACKGROUND GRID
+====================================*/
+
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+    rgba(15,23,42,.03) 1px,
+    transparent 1px
+    ),
+
+    linear-gradient(
+    90deg,
+    rgba(15,23,42,.03) 1px,
+    transparent 1px
+    );
+
+
+    background-size:40px 40px;
+
+    z-index:-3;
+
+}
+
+
+
+
+
+/*====================================
+        MAIN LOGIN LAYOUT
+====================================*/
+
+
+.login-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    max-width:1450px;
+
+    margin:auto;
+
+
+    display:grid;
+
+    grid-template-columns:1fr 480px;
+
+
+    align-items:center;
+
+    gap:80px;
+
+
+    padding:70px;
+
+
+    transition:
+
+    grid-template-columns 1s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+
+
+
+/*====================================
+        LEFT PANEL
+====================================*/
+
+
+.left-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+
+    transition:
+
+    opacity .8s ease,
+
+    transform .9s cubic-bezier(.22,1,.36,1),
+
+    filter .8s ease;
+
+}
+
+
+
+
+/*====================================
+        BRAND LOGO
+====================================*/
+
+
+.brand h1{
+
+
+    font-family:'Cinzel',serif;
+
+
+    font-size:72px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:2px;
+
+
+    color:#0F172A;
+
+
+    animation:logoFade 1s ease;
+
+
+}
+
+
+
+.brand span{
+
+
+    color:#D4AF37;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+.brand:hover span{
+
+
+    color:#EAB308;
+
+
+}
+
+
+
+.brand-line{
+
+
+    width:110px;
+
+
+    height:5px;
+
+
+    background:#2563EB;
+
+
+    border-radius:20px;
+
+
+    margin:18px 0;
+
+
+}
+
+
+
+.brand p{
+
+
+    color:#64748B;
+
+
+    font-size:15px;
+
+
+    letter-spacing:3px;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+
+
+/*====================================
+        HERO CONTENT
+====================================*/
+
+
+.hero-content{
+
+
+    margin-top:55px;
+
+
+}
+
+
+
+.hero-content h2{
+
+
+    font-size:52px;
+
+
+    font-weight:700;
+
+
+    line-height:1.2;
+
+
+    color:#0F172A;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+.hero-content h2:hover{
+
+
+    color:#1E3A8A;
+
+
+}
+
+
+
+.hero-content p{
+
+
+    margin-top:22px;
+
+
+    max-width:620px;
+
+
+    font-size:17px;
+
+
+    line-height:1.9;
+
+
+    color:#475569;
+
+
+}
+
+
+
+
+
+
+/*====================================
+        LOGO ANIMATION
+====================================*/
+
+
+@keyframes logoFade{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+ 
+/*====================================
+        FEATURES SECTION
+====================================*/
+
+
+.features{
+
+
+    margin-top:55px;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:22px;
+
+
+}
+
+
+
+
+
+/*====================================
+        FEATURE CARD
+====================================*/
+
+
+.feature-card{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:20px;
+
+
+    background:#FFFFFF;
+
+
+    border:1px solid #E2E8F0;
+
+
+    border-radius:20px;
+
+
+    padding:22px;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+
+
+    0 10px 25px rgba(15,23,42,.05);
+
+
+
+    transition:.35s;
+
+
+
+}
+
+
+
+.feature-card:hover{
+
+
+    transform:translateY(-6px);
+
+
+    border-color:#2563EB;
+
+
+    box-shadow:
+
+
+    0 18px 35px rgba(37,99,235,.12);
+
+
+
+}
+
+
+
+
+.feature-card .icon{
+
+
+    width:65px;
+
+
+    height:65px;
+
+
+    border-radius:18px;
+
+
+    background:#2563EB;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    color:#FFFFFF;
+
+
+    font-size:24px;
+
+
+    flex-shrink:0;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+.feature-card:hover .icon{
+
+
+    transform:rotate(-8deg) scale(1.08);
+
+
+    background:#1D4ED8;
+
+
+}
+
+
+
+.feature-card h3{
+
+
+    font-size:20px;
+
+
+    color:#0F172A;
+
+
+    margin-bottom:6px;
+
+
+}
+
+
+
+.feature-card:hover h3{
+
+
+    color:#2563EB;
+
+
+}
+
+
+
+.feature-card p{
+
+
+    color:#64748B;
+
+
+    font-size:14px;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+.feature-card:hover p{
+
+
+    color:#334155;
+
+
+}
+
+
+
+
+
+/*====================================
+        RIGHT PANEL
+====================================*/
+
+
+.right-panel{
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    transition:
+
+
+    all .9s cubic-bezier(.22,1,.36,1);
+
+
+}
+
+
+
+
+
+
+
+/*====================================
+        LOGIN CARD
+====================================*/
+
+
+.login-card{
+
+
+    width:100%;
+
+
+    max-width:460px;
+
+
+    background:#FFFFFF;
+
+
+    border:1px solid #E2E8F0;
+
+
+    border-radius:28px;
+
+
+    padding:45px;
+
+
+
+    box-shadow:
+
+
+    0 20px 60px rgba(15,23,42,.08);
+
+
+
+    animation:fadeUp .9s ease;
+
+
+
+    transition:
+
+
+    transform 1s cubic-bezier(.22,1,.36,1),
+
+
+    width 1s ease,
+
+
+    max-width 1s ease,
+
+
+    box-shadow .8s ease;
+
+
+
+}
+
+
+
+.login-card:hover{
+
+
+    transform:translateY(-6px);
+
+
+    box-shadow:
+
+
+    0 30px 70px rgba(15,23,42,.12);
+
+
+
+}
+
+
+
+
+
+/*====================================
+        LOGIN HEADER
+====================================*/
+
+
+.login-header{
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+.badge{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    gap:8px;
+
+
+    background:#EFF6FF;
+
+
+    color:#2563EB;
+
+
+    padding:8px 18px;
+
+
+    border-radius:50px;
+
+
+    font-size:13px;
+
+
+    font-weight:600;
+
+
+    margin-bottom:18px;
+
+
+
+}
+
+
+
+.badge i{
+
+
+    color:#D4AF37;
+
+
+}
+
+
+
+
+
+.login-header h2{
+
+
+    font-size:34px;
+
+
+    font-weight:700;
+
+
+    color:#0F172A;
+
+
+    margin-bottom:10px;
+
+
+
+}
+
+
+
+
+.login-header p{
+
+
+    color:#64748B;
+
+
+    font-size:15px;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+/*====================================
+        INPUT GROUP
+====================================*/
+
+
+.input-group{
+
+
+    margin-bottom:24px;
+
+
+}
+
+
+
+.input-group label{
+
+
+    display:block;
+
+
+    margin-bottom:10px;
+
+
+    color:#334155;
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+/*====================================
+        INPUT BOX
+====================================*/
+
+
+.input-box{
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+.input-box i{
+
+
+    position:absolute;
+
+
+    left:18px;
+
+
+    top:50%;
+
+
+    transform:translateY(-50%);
+
+
+    color:#94A3B8;
+
+
+    font-size:17px;
+
+
+    transition:.3s;
+
+
+
+}
+
+
+
+
+.input-box input{
+
+
+    width:100%;
+
+
+    height:58px;
+
+
+    padding:0 20px 0 55px;
+
+
+
+    border:2px solid #E2E8F0;
+
+
+
+    border-radius:16px;
+
+
+    outline:none;
+
+
+    background:#FFFFFF;
+
+
+    color:#0F172A;
+
+
+    font-size:15px;
+
+
+    font-family:'Poppins',sans-serif;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+.input-box input::placeholder{
+
+
+    color:#94A3B8;
+
+
+}
+
+
+
+
+.input-box input:focus{
+
+
+    border-color:#2563EB;
+
+
+
+    box-shadow:
+
+
+    0 0 0 5px rgba(37,99,235,.10);
+
+
+
+}
+
+
+
+.input-box:focus-within i{
+
+
+    color:#2563EB;
+
+
+}
+
+
+
+.input-box::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:0;
+
+
+    bottom:0;
+
+
+    width:0;
+
+
+    height:3px;
+
+
+    background:#2563EB;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+.input-box:focus-within::after{
+
+
+    width:100%;
+
+
+}
+
+/*====================================
+        LOGIN BUTTON
+====================================*/
+
+
+.login-btn{
+
+
+    width:100%;
+
+
+    height:60px;
+
+
+    margin-top:15px;
+
+
+    border:none;
+
+
+    border-radius:16px;
+
+
+    background:#2563EB;
+
+
+    color:#FFFFFF;
+
+
+    font-size:16px;
+
+
+    font-weight:600;
+
+
+    font-family:'Poppins',sans-serif;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    gap:12px;
+
+
+    cursor:pointer;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+
+    box-shadow:
+
+
+    0 15px 30px rgba(37,99,235,.28);
+
+
+
+    transition:.35s;
+
+
+
+}
+
+
+
+.login-btn:hover{
+
+
+    background:#1D4ED8;
+
+
+    transform:translateY(-4px);
+
+
+
+    box-shadow:
+
+
+    0 22px 40px rgba(37,99,235,.35);
+
+
+
+}
+
+
+
+.login-btn:active{
+
+
+    transform:scale(.98);
+
+
+}
+
+
+
+.login-btn i{
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.login-btn:hover i{
+
+
+    transform:translateX(6px);
+
+
+}
+
+
+
+
+
+.login-btn::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    left:-120%;
+
+
+    width:70%;
+
+
+    height:100%;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.45),
+
+    transparent
+
+    );
+
+
+
+    transition:.7s;
+
+
+}
+
+
+
+.login-btn:hover::before{
+
+
+    left:150%;
+
+
+}
+
+
+
+
+
+
+
+/*====================================
+        LOGIN FOOTER
+====================================*/
+
+
+.login-footer{
+
+
+    margin-top:35px;
+
+
+    padding-top:25px;
+
+
+    border-top:1px solid #E2E8F0;
+
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:15px;
+
+
+
+}
+
+
+
+
+.footer-item{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:12px;
+
+
+    color:#64748B;
+
+
+    font-size:14px;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+.footer-item i{
+
+
+    width:36px;
+
+
+    height:36px;
+
+
+    border-radius:12px;
+
+
+    background:#EFF6FF;
+
+
+    color:#2563EB;
+
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+
+
+
+/*====================================
+        TOAST MESSAGE
+====================================*/
+
+
+#toast{
+
+
+    position:fixed;
+
+
+    top:25px;
+
+
+    right:25px;
+
+
+
+    min-width:300px;
+
+
+    max-width:380px;
+
+
+
+    padding:16px 22px;
+
+
+
+    border-radius:16px;
+
+
+
+    background:#0F172A;
+
+
+    color:#FFFFFF;
+
+
+
+    font-size:14px;
+
+
+    font-weight:500;
+
+
+
+    box-shadow:
+
+
+    0 18px 40px rgba(15,23,42,.18);
+
+
+
+    opacity:0;
+
+
+    visibility:hidden;
+
+
+
+    transform:translateY(-25px);
+
+
+
+    transition:.35s;
+
+
+
+    z-index:9999;
+
+
+
+}
+
+
+
+#toast.show{
+
+
+    opacity:1;
+
+
+    visibility:visible;
+
+
+    transform:translateY(0);
+
+
+}
+
+
+
+
+
+
+
+
+/*====================================
+        COMMON ANIMATIONS
+====================================*/
+
+
+@keyframes fadeUp{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:translateY(40px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+@keyframes leftFade{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:translateX(-60px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:translateX(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+@keyframes rightFade{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:translateX(60px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:translateX(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+/*====================================
+        PAGE LOAD ANIMATION
+====================================*/
+
+
+.left-panel{
+
+
+    animation:leftFade .8s ease;
+
+
+}
+
+
+
+
+.right-panel{
+
+
+    animation:rightFade .9s ease;
+
+
+}
+
+
+
+
+
+.feature-card{
+
+
+    animation:fadeUp 1s ease;
+
+
+}
+
+
+
+
+
+
+
+
+/*====================================
+        FLOATING FEATURE EFFECT
+====================================*/
+
+
+.feature-card:nth-child(1){
+
+
+    animation:floatCard 5s ease-in-out infinite;
+
+
+}
+
+
+
+.feature-card:nth-child(2){
+
+
+    animation:floatCard 5s ease-in-out infinite .4s;
+
+
+}
+
+
+
+.feature-card:nth-child(3){
+
+
+    animation:floatCard 5s ease-in-out infinite .8s;
+
+
+}
+
+
+
+
+
+
+@keyframes floatCard{
+
+
+    0%,100%{
+
+
+        transform:translateY(0);
+
+
+    }
+
+
+
+    50%{
+
+
+        transform:translateY(-6px);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/*====================================
+        INPUT AUTOFILL
+====================================*/
+
+
+input:-webkit-autofill{
+
+
+    -webkit-box-shadow:
+
+    0 0 0 1000px #FFFFFF inset;
+
+
+
+    -webkit-text-fill-color:#0F172A;
+
+
+}
+
+
+
+
+
+
+
+/*====================================
+        SELECTION
+====================================*/
+
+
+::selection{
+
+
+    background:#2563EB;
+
+
+    color:#FFFFFF;
+
+
+}
+
+
+
+
+
+
+/*====================================
+        GLOBAL SMOOTH TRANSITION
+====================================*/
+
+
+button,
+input,
+.feature-card,
+.brand span,
+.login-card{
+
+
+    transition:
+
+    background-color .3s,
+
+    color .3s,
+
+    border-color .3s,
+
+    box-shadow .3s,
+
+    transform .3s;
+
+
+}
+
+
+/*====================================
+        TABLET RESPONSIVE
+====================================*/
+
+
+@media(max-width:1100px){
+
+
+.login-page{
+
+
+    grid-template-columns:1fr;
+
+
+    gap:60px;
+
+
+    padding:50px 35px;
+
+
+
+}
+
+
+
+.left-panel{
+
+
+    text-align:center;
+
+
+    align-items:center;
+
+
+}
+
+
+
+.hero-content p{
+
+
+    max-width:700px;
+
+
+}
+
+
+
+
+.features{
+
+
+    width:100%;
+
+
+    max-width:650px;
+
+
+}
+
+
+
+
+.right-panel{
+
+
+    width:100%;
+
+
+}
+
+
+
+
+.login-card{
+
+
+    max-width:650px;
+
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*====================================
+        MOBILE RESPONSIVE
+====================================*/
+
+
+@media(max-width:768px){
+
+
+
+body{
+
+
+    overflow-y:auto;
+
+
+}
+
+
+
+
+.login-page{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    padding:25px 18px;
+
+
+    gap:40px;
+
+
+}
+
+
+
+
+
+
+/* BRAND */
+
+
+.brand h1{
+
+
+    font-size:48px;
+
+
+}
+
+
+
+
+.brand p{
+
+
+    font-size:12px;
+
+
+    letter-spacing:2px;
+
+
+}
+
+
+
+
+.brand-line{
+
+
+    margin:15px auto;
+
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero-content{
+
+
+    margin-top:35px;
+
+
+}
+
+
+
+.hero-content h2{
+
+
+    font-size:34px;
+
+
+}
+
+
+
+
+.hero-content p{
+
+
+    font-size:15px;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+/* FEATURES */
+
+
+.features{
+
+
+    margin-top:35px;
+
+
+    gap:18px;
+
+
+}
+
+
+
+
+.feature-card{
+
+
+    padding:18px;
+
+
+    border-radius:18px;
+
+
+}
+
+
+
+
+.feature-card .icon{
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    font-size:20px;
+
+
+}
+
+
+
+
+
+.feature-card h3{
+
+
+    font-size:17px;
+
+
+}
+
+
+
+
+
+.feature-card p{
+
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+
+
+
+/* LOGIN */
+
+
+.right-panel{
+
+
+    width:100%;
+
+
+}
+
+
+
+
+.login-card{
+
+
+    width:100%;
+
+
+    max-width:100%;
+
+
+    padding:30px 22px;
+
+
+    border-radius:24px;
+
+
+}
+
+
+
+
+.login-header h2{
+
+
+    font-size:28px;
+
+
+}
+
+
+
+
+
+.login-header p{
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+.input-box input{
+
+
+    height:54px;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+.login-btn{
+
+
+    height:56px;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+.footer-item{
+
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+/* TOAST */
+
+
+#toast{
+
+
+    left:15px;
+
+
+    right:15px;
+
+
+    min-width:auto;
+
+
+    max-width:none;
+
+
+    top:18px;
+
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*====================================
+        SMALL MOBILE
+====================================*/
+
+
+@media(max-width:400px){
+
+
+
+.login-page{
+
+
+    padding:20px 15px;
+
+
+}
+
+
+
+.brand h1{
+
+
+    font-size:40px;
+
+
+}
+
+
+
+
+.hero-content h2{
+
+
+    font-size:30px;
+
+
+}
+
+
+
+
+.login-card{
+
+
+    padding:25px 18px;
+
+
+}
+
+
+
+
+.login-header h2{
+
+
+    font-size:25px;
+
+
+}
+
+
+
+
+.badge{
+
+
+    font-size:12px;
+
+
+    padding:7px 14px;
+
+
+}
+
+
+
+
+
+.input-box input{
+
+
+    height:52px;
+
+
+}
+
+
+
+
+.login-btn{
+
+
+    height:54px;
+
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*====================================
+        LARGE DESKTOP
+====================================*/
+
+
+@media(min-width:1600px){
+
+
+
+.login-page{
+
+
+    max-width:1650px;
+
+
+    grid-template-columns:1fr 600px;
+
+
+}
+
+
+
+
+.brand h1{
+
+
+    font-size:82px;
+
+
+}
+
+
+
+
+.hero-content h2{
+
+
+    font-size:58px;
+
+
+}
+
+
+
+
+.hero-content p{
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+.login-card{
+
+
+    max-width:600px;
+
+
+    padding:60px;
+
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*====================================
+        LANDSCAPE MOBILE
+====================================*/
+
+
+@media(max-height:700px){
+
+
+
+.login-page{
+
+
+    padding-top:30px;
+
+
+    padding-bottom:30px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+/*====================================
+        PREMIUM SCROLLBAR
+====================================*/
+
+
+::-webkit-scrollbar{
+
+
+    width:8px;
+
+
+}
+
+
+
+
+::-webkit-scrollbar-track{
+
+
+    background:#F1F5F9;
+
+
+}
+
+
+
+
+::-webkit-scrollbar-thumb{
+
+
+    background:#CBD5E1;
+
+
+    border-radius:20px;
+
+
+}
+
+
+
+
+
+::-webkit-scrollbar-thumb:hover{
+
+
+    background:#94A3B8;
+
+
+}
+
+
+
+
+
+
+
+
+/*====================================
+        REDUCE MOTION
+====================================*/
+
+
+@media(prefers-reduced-motion:reduce){
+
+
+
+*{
+
+
+    animation:none !important;
+
+
+    transition:none !important;
+
+
+    scroll-behavior:auto !important;
+
+
+}
+
+
+
+}
+
+
+/*====================================
+        EXPERIENCE TRANSITION
+====================================*/
+
+
+/* LEFT PANEL */
+
+
+.left-panel{
+
+
+    transition:
+
+
+    opacity .8s ease,
+
+
+    transform .9s cubic-bezier(.22,1,.36,1),
+
+
+    filter .8s ease;
+
+
+
+}
+
+
+
+
+
+
+/* RIGHT PANEL */
+
+
+.right-panel{
+
+
+    transition:
+
+
+    all .9s cubic-bezier(.22,1,.36,1);
+
+
+
+}
+
+
+
+
+
+
+
+/* LOGIN CARD */
+
+
+.login-card{
+
+
+    transition:
+
+
+    transform 1s cubic-bezier(.22,1,.36,1),
+
+
+    width 1s ease,
+
+
+    max-width 1s ease,
+
+
+    box-shadow .8s ease;
+
+
+
+}
+
+
+
+
+
+
+
+/*====================================
+        AFTER BEGIN EXPERIENCE CLICK
+====================================*/
+
+
+.login-page.expand{
+
+
+    grid-template-columns:1fr;
+
+
+
+}
+
+
+
+
+
+
+
+/*====================================
+        LEFT CONTENT EXIT
+====================================*/
+
+
+.login-page.expand .left-panel{
+
+
+    opacity:0;
+
+
+    transform:
+
+
+    translateX(-150px)
+
+
+    scale(.95);
+
+
+
+    filter:blur(12px);
+
+
+
+    pointer-events:none;
+
+
+
+}
+
+
+
+
+
+
+
+
+/*====================================
+        LOGIN CENTER MOVE
+====================================*/
+
+
+.login-page.expand .right-panel{
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+}
+
+
+
+
+
+
+
+
+/*====================================
+        LOGIN CARD ZOOM
+====================================*/
+
+
+.login-page.expand .login-card{
+
+
+    width:100%;
+
+
+    max-width:650px;
+
+
+
+    transform:
+
+
+    scale(1.08)
+
+
+    translateY(-10px);
+
+
+
+
+    box-shadow:
+
+
+
+    0 35px 90px rgba(15,23,42,.18);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*====================================
+        MOBILE EXPERIENCE
+====================================*/
+
+
+@media(max-width:768px){
+
+
+
+.login-page{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+
+/* LEFT HIDE */
+
+
+.login-page.expand .left-panel{
+
+
+    opacity:0;
+
+
+
+    transform:
+
+
+    translateY(-80px)
+
+
+    scale(.9);
+
+
+
+    height:0;
+
+
+    overflow:hidden;
+
+
+    margin:0;
+
+
+
+    filter:blur(10px);
+
+
+
+}
+
+
+
+
+
+
+
+/* LOGIN FULL SCREEN */
+
+
+.login-page.expand .right-panel{
+
+
+    width:100%;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+}
+
+
+
+
+
+
+.login-page.expand .login-card{
+
+
+    width:100%;
+
+
+    max-width:100%;
+
+
+
+    transform:
+
+
+    scale(1.03)
+
+
+    translateY(-20px);
+
+
+
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*====================================
+        EXTRA SMALL MOBILE
+====================================*/
+
+
+@media(max-width:400px){
+
+
+
+.login-page.expand .login-card{
+
+
+    transform:
+
+
+    scale(1)
+
+
+    translateY(-10px);
+
+
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*====================================
+        BUTTON CLICK LOADING EFFECT
+====================================*/
+
+
+.login-btn.loading{
+
+
+    pointer-events:none;
+
+
+    opacity:.8;
+
+
+
+}
+
+
+
+.login-btn.loading i{
+
+
+    animation:spin .8s linear infinite;
+
+
+
+}
+
+
+
+@keyframes spin{
+
+
+    from{
+
+
+        transform:rotate(0deg);
+
+
+    }
+
+
+
+    to{
+
+
+        transform:rotate(360deg);
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*====================================
+        PAGE EXIT FADE
+====================================*/
+
+
+.page-exit{
+
+
+    animation:pageExit .8s ease forwards;
+
+
+
+}
+
+
+
+@keyframes pageExit{
+
+
+    from{
+
+
+        opacity:1;
+
+
+        transform:scale(1);
+
+
+    }
+
+
+
+
+    to{
+
+
+        opacity:0;
+
+
+        transform:scale(.96);
+
+
+    }
+
+
+
+}

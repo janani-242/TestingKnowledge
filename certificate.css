@@ -1,0 +1,736 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background: #e5e7eb;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+/* =========================================================
+   MAIN CERTIFICATE
+========================================================= */
+
+.certificate {
+
+    width: 1120px;
+
+    height: 790px;
+
+    background: #ffffff;
+
+    padding: 28px;
+
+    position: relative;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* =========================================================
+   CERTIFICATE BORDER
+========================================================= */
+
+.certificate-border {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 5px solid #c9a227;
+
+    position: relative;
+
+    padding: 55px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   INNER BORDER
+========================================================= */
+
+.certificate-border::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 2px solid #0b1b33;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   WATERMARK
+========================================================= */
+
+.certificate-border::after {
+
+    content: "Q";
+
+    position: absolute;
+
+    font-size: 350px;
+
+    font-family: 'Cinzel';
+
+    color: rgba(201, 162, 39, 0.06);
+
+    right: 100px;
+
+    bottom: 80px;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   CONTENT ABOVE WATERMARK
+========================================================= */
+
+.logo,
+h2,
+h3,
+.present,
+.student-name,
+.description,
+.category-box,
+.league-box,
+.achievement,
+.details,
+.signature,
+.seal {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+.year {
+
+    position: absolute;
+
+    right: 55px;
+
+    top: 40px;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #c9a227;
+
+    font-weight: 600;
+
+    z-index: 3;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    margin-top: 5px;
+
+}
+
+
+.logo-mark {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #c9a227;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 40px;
+
+    font-family: 'Cinzel';
+
+    font-weight: bold;
+
+}
+
+
+.logo h1 {
+
+    margin-top: 12px;
+
+    font-family: 'Cinzel';
+
+    font-size: 32px;
+
+    letter-spacing: 5px;
+
+    color: #0b1b33;
+
+}
+
+
+.logo p {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #777;
+
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+h2 {
+
+    margin-top: 25px;
+
+    font-family: 'Cinzel';
+
+    font-size: 46px;
+
+    letter-spacing: 10px;
+
+    color: #0b1b33;
+
+}
+
+
+h3 {
+
+    margin-top: 5px;
+
+    font-size: 18px;
+
+    letter-spacing: 6px;
+
+    color: #c9a227;
+
+}
+
+
+/* =========================================================
+   PRESENT TEXT
+========================================================= */
+
+.present {
+
+    margin-top: 25px;
+
+    color: #555;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   STUDENT NAME
+========================================================= */
+
+.student-name {
+
+    margin: 18px 0;
+
+    font-family: 'Great Vibes';
+
+    font-size: 65px;
+
+    color: #c9a227;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+
+    width: 75%;
+
+    margin: auto;
+
+    font-size: 14px;
+
+    color: #555;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.category-box {
+
+    width: 330px;
+
+    margin: 22px auto 15px;
+
+    padding: 10px 20px;
+
+}
+
+
+.category-box p {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #c9a227;
+
+    font-weight: 600;
+
+}
+
+
+.category-box h4 {
+
+    margin-top: 8px;
+
+    font-family: 'Cinzel';
+
+    font-size: 22px;
+
+    color: #0b1b33;
+
+}
+
+
+/* =========================================================
+   ACHIEVEMENT LEAGUE
+========================================================= */
+
+.league-box {
+
+    width: 300px;
+
+    margin: 8px auto 15px;
+
+    padding: 7px 18px;
+
+    border-top: 1px solid rgba(201, 162, 39, 0.45);
+
+    border-bottom: 1px solid rgba(201, 162, 39, 0.45);
+
+}
+
+
+.league-label {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #777;
+
+    font-weight: 600;
+
+    margin-bottom: 3px;
+
+}
+
+
+.league-box h4 {
+
+    font-family: 'Cinzel';
+
+    font-size: 19px;
+
+    letter-spacing: 2px;
+
+    color: #c9a227;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   ACHIEVEMENT
+========================================================= */
+
+.achievement {
+
+    font-size: 13px;
+
+    color: #666;
+
+    margin-top: 8px;
+
+}
+
+
+/* =========================================================
+   OFFICIAL SEAL
+========================================================= */
+
+.seal {
+
+    position: absolute;
+
+    left: 70px;
+
+    bottom: 80px;
+
+    width: 115px;
+
+    height: 115px;
+
+    border-radius: 50%;
+
+    border: 4px solid #c9a227;
+
+    background: #ffffff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.seal-inner {
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    border: 2px dashed #c9a227;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: #0b1b33;
+
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.details {
+
+    position: absolute;
+
+    left: 55px;
+
+    bottom: 40px;
+
+    text-align: left;
+
+    font-size: 12px;
+
+    color: #555;
+
+}
+
+
+.details p {
+
+    margin-bottom: 4px;
+
+}
+
+
+.details b {
+
+    color: #0b1b33;
+
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.signature {
+
+    position: absolute;
+
+    right: 70px;
+
+    bottom: 45px;
+
+    display: flex;
+
+    gap: 80px;
+
+}
+
+
+.director-sign {
+
+    text-align: center;
+
+}
+
+
+.sign-image {
+
+    width: 150px;
+
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto 5px;
+
+}
+
+
+.signature .line {
+
+    width: 140px;
+
+    height: 2px;
+
+    background: #c9a227;
+
+    margin: 0 auto;
+
+}
+
+
+.signature p {
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    color: #555;
+
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.download-btn {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    background: #0b1b33;
+
+    color: #ffffff;
+
+    border: none;
+
+    padding: 12px 28px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+
+    z-index: 10;
+
+}
+
+
+.download-btn:hover {
+
+    background: #c9a227;
+
+    color: #0b1b33;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(201, 162, 39, 0.25);
+
+}
+
+
+.download-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    @page {
+
+        size: A4 landscape;
+
+        margin: 0;
+
+    }
+
+
+    body {
+
+        background: #ffffff;
+
+        margin: 0;
+
+        min-height: auto;
+
+    }
+
+
+    .certificate {
+
+        width: 297mm;
+
+        height: 210mm;
+
+        box-shadow: none;
+
+        padding: 28px;
+
+    }
+
+
+    .download-btn {
+
+        display: none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE (scaled with JS - see certificate.js fitCertificate)
+========================================================= */
+
+body{
+    overflow-x:hidden;
+}
+
+.cert-stage{
+    position:relative;
+    width:1120px;
+    height:790px;
+    margin:0 auto;
+}
+
+.cert-stage .certificate{
+    transform-origin:top left;
+}
+
+@media screen and (max-width:1150px){
+    body{
+        align-items:flex-start;
+        padding:64px 0 90px;
+    }
+}
+
+@media screen and (max-width:700px){
+    .download-btn{
+        right:15px;
+        bottom:15px;
+        padding:10px 20px;
+    }
+}
+
+@media print{
+    .cert-stage{ width:auto; height:auto; }
+    .cert-stage .certificate{ transform:none !important; }
+}

@@ -1,0 +1,47 @@
+/* ==========================================
+   QUIZORA  |  nav.css
+   Shared back button + responsive helpers
+========================================== */
+
+.qz-back{
+    position:fixed;
+    top:max(12px, env(safe-area-inset-top));
+    left:max(12px, env(safe-area-inset-left));
+    z-index:9999;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:9px 16px;
+    min-height:40px;
+    border:1px solid rgba(15,23,42,.12);
+    border-radius:999px;
+    background:rgba(255,255,255,.92);
+    color:#0f172a;
+    font:600 14px/1 'Poppins',system-ui,sans-serif;
+    text-decoration:none;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(15,23,42,.14);
+    -webkit-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
+    transition:transform .15s ease, box-shadow .15s ease;
+}
+.qz-back:hover{ transform:translateX(-2px); box-shadow:0 8px 22px rgba(15,23,42,.2); }
+.qz-back:focus-visible{ outline:3px solid #2563eb; outline-offset:2px; }
+
+/* dark pages (home) */
+.qz-back.qz-dark{
+    background:rgba(15,23,42,.65);
+    color:#fff;
+    border-color:rgba(255,255,255,.25);
+}
+
+/* keep page content clear of the fixed back button on small screens */
+@media (max-width:1100px){
+    body.qz-has-back{ padding-top:58px !important; }
+}
+
+@media (max-width:600px){
+    .qz-back{ padding:8px 13px; font-size:13px; min-height:38px; }
+}
+
+@media print{ .qz-back{ display:none !important; } }

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Quiz Result | Quizora</title>
+
+
+<!-- Google Font -->
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="result.css">
+
+
+<link rel="stylesheet" href="nav.css">
+</head>
+
+
+
+<body data-require="result" data-back="categories.html" data-back-label="Categories">
+
+
+
+<div class="result-container">
+
+
+
+    <div class="result-card">
+
+
+
+        <!-- TITLE -->
+
+        <h1>
+            🎉 Quiz Completed
+        </h1>
+
+
+
+
+
+        <!-- CATEGORY -->
+
+        <p class="category" id="categoryName">
+
+            Quizora Quiz
+
+        </p>
+
+
+
+
+
+
+
+        <!-- SCORE BOX -->
+
+        <div class="score-box">
+
+
+            <h2>
+                Your Score
+            </h2>
+
+
+            <div class="score" id="score">
+
+                0/10
+
+            </div>
+
+
+
+            <p id="percentage">
+
+                0%
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- STATS -->
+
+
+        <div class="stats">
+
+
+
+            <div class="stat-card">
+
+                <h3 id="correct">
+                    0
+                </h3>
+
+                <p>
+                    Correct
+                </p>
+
+            </div>
+
+
+
+
+
+
+            <div class="stat-card">
+
+
+                <h3 id="wrong">
+
+                    0
+
+                </h3>
+
+
+                <p>
+                    Wrong
+                </p>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="stat-card">
+
+
+                <h3 id="total">
+
+                    10
+
+                </h3>
+
+
+                <p>
+                    Total
+                </p>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- RESULT MESSAGE -->
+
+
+        <h2 id="resultStatus">
+
+        </h2>
+
+
+
+
+
+
+
+
+
+        <!-- CERTIFICATE BUTTON -->
+
+
+        <button 
+        id="certificateBtn"
+        class="certificate-btn"
+        onclick="generateCertificate()">
+
+
+            🏆 Generate Certificate
+
+
+        </button>
+
+
+
+
+
+
+
+
+
+        <button class="play-btn" onclick="window.location.href='leaderboard.html'">🏅 Leaderboard</button>
+        <!-- PLAY AGAIN BUTTON -->
+
+
+        <button 
+        class="play-btn"
+        onclick="window.location.href='categories.html'">
+
+
+            🔄 Play Again
+
+
+        </button>
+
+
+
+
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- RESULT JS -->
+
+<script src="result.js"></script>
+
+
+
+<script src="nav.js"></script>
+</body>
+
+</html>

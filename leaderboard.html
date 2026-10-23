@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leaderboard | Quizora'26</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="nav.css">
+</head>
+
+<body data-back="categories.html" data-back-anon="index.html" data-back-label="Back">
+
+<div class="wrap">
+
+    <h1>🏅 Leaderboard</h1>
+
+    <p class="sub">
+        Top 10 scorers (higher score, then faster time)
+    </p>
+
+    <div class="bar">
+
+        <select id="cat">
+            <option value="">All Categories</option>
+        </select>
+
+        <button onclick="location.href='categories.html'">
+            Take a Quiz
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Score</th>
+                    <th>Time (s)</th>
+                </tr>
+            </thead>
+
+            <tbody id="rows"></tbody>
+
+        </table>
+
+    </div>
+
+    <p class="err" id="err"></p>
+
+</div>
+
+
+<script src="db.js"></script>
+
+<script>
+
+async function load() {
+
+    const c = document.getElementById("cat").value;
+
+    try {
+
+        const d = await gql(`
+            query($w: quiz_attempts_bool_exp) {
+
+                quiz_attempts(
+                    where: $w
+                    order_by: [
+                        { score: desc }
+                        { time_taken: asc }
+                    ]
+                    limit: 10
+                ) {
+
+                    score
+                    total
+                    time_taken
+
+                    public_participant {
+                        first_name
+                        last_name
+                    }
+
+                    public_category {
+                        name
+                    }
+                }
+            }
+        `, {
+            w: c
+                ? {
+                    category_slug: {
+                        _eq: c
+                    }
+                }
+                : {}
+        });
+
+
+        document.getElementById("rows").innerHTML =
+            d.quiz_attempts.map((a, i) => {
+
+                const firstName =
+                    a.public_participant?.first_name || "";
+
+                const lastName =
+                    a.public_participant?.last_name || "";
+
+                const categoryName =
+                    a.public_category?.name || "Unknown";
+
+                return `
+                    <tr>
+                        <td>${i + 1}</td>
+
+                        <td>
+                            ${firstName} ${lastName}
+                        </td>
+
+                        <td>
+                            ${categoryName}
+                        </td>
+
+                        <td>
+                            ${a.score}/${a.total}
+                        </td>
+
+                        <td>
+                            ${a.time_taken}
+                        </td>
+                    </tr>
+                `;
+
+            }).join("")
+
+            || `
+                <tr>
+                    <td colspan="5">
+                        No attempts yet
+                    </td>
+                </tr>
+            `;
+
+
+    } catch (e) {
+
+        document.getElementById("err").textContent =
+            "Error: " + e.message;
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD CATEGORIES
+========================================================= */
+
+(async () => {
+
+    try {
+
+        const d = await gql(`
+            {
+                categories(order_by: { name: asc }) {
+                    slug
+                    name
+                }
+            }
+        `);
+
+
+        document.getElementById("cat").innerHTML +=
+            d.categories.map(c => `
+                <option value="${c.slug}">
+                    ${c.name}
+                </option>
+            `).join("");
+
+
+    } catch (e) {
+
+        console.error("Category loading error:", e);
+
+    }
+
+
+    document.getElementById("cat").onchange = load;
+
+    load();
+
+})();
+
+</script>
+
+<script src="nav.js"></script>
+</body>
+</html>

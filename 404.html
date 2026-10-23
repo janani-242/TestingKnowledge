@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Quizora'26</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:20px;
+ font-family:'Poppins',sans-serif;color:#fff;overflow-x:hidden;
+ background:radial-gradient(circle at 20% 20%,#1e3a8a 0,#0b1437 55%,#050a1f 100%)}
+.box{width:100%;max-width:520px;text-align:center;padding:clamp(28px,6vw,48px);border-radius:24px;
+ background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(10px);
+ box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.code{font-family:'Cinzel',serif;font-size:clamp(64px,22vw,112px);font-weight:700;line-height:1;
+ background:linear-gradient(135deg,#facc15,#f59e0b);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{font-size:clamp(20px,5vw,26px);margin:14px 0 8px}
+p{color:#cbd5e1;font-size:clamp(14px,3.5vw,16px);line-height:1.6;margin-bottom:26px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+a{padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px;transition:transform .15s}
+a:hover{transform:translateY(-2px)}
+.p{background:linear-gradient(135deg,#facc15,#f59e0b);color:#111827}
+.s{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25)}
+</style>
+</head>
+<body>
+<main class="box">
+  <div class="code">404</div>
+  <h1>Oops! Page not found</h1>
+  <p>The page you are looking for does not exist or has been moved.</p>
+  <div class="btns">
+    <a class="p" href="index.html">🏠 Go Home</a>
+    <a class="s" href="categories.html">📚 Categories</a>
+  </div>
+</main>
+<script>
+/* auto redirect to home after 8 sec */
+setTimeout(function(){ location.replace("index.html"); }, 8000);
+</script>
+</body>
+</html>

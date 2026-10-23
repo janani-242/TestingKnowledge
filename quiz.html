@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Quiz | Quizora</title>
+
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="quiz.css">
+
+
+<link rel="stylesheet" href="nav.css">
+</head>
+
+
+<body data-require="login" data-back="categories.html" data-back-label="Categories" data-confirm-leave>
+
+
+<div class="container">
+
+
+
+<!-- ===============================
+        START SCREEN
+================================ -->
+
+
+<div class="start-card" id="startScreen">
+
+
+<div class="start-icon">
+
+🎯
+
+</div>
+
+
+
+<h1 id="startTitle">
+
+Quizora Quiz
+
+</h1>
+
+
+
+<p>
+
+Test your knowledge with 10 random questions.
+
+</p>
+
+
+
+
+<div class="quiz-info">
+
+
+<div>
+
+📝 Questions
+
+<br>
+
+<b>
+10
+</b>
+
+</div>
+
+
+
+<div>
+
+⏱️ Time
+
+<br>
+
+<b>
+120 Seconds
+</b>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<button id="startBtn">
+
+Start Quiz
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ===============================
+        QUIZ AREA
+================================ -->
+
+
+<div id="quizArea" style="display:none;">
+
+
+
+
+
+<!-- HEADER -->
+
+
+<header class="quiz-header">
+
+
+<div class="header-left">
+
+
+<h2 id="categoryTitle">
+
+Loading...
+
+</h2>
+
+
+
+<p>
+
+Choose the correct answer.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="timer-box">
+
+
+⏱️
+
+<span id="timer">
+
+120
+
+</span>
+
+s
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<!-- PROGRESS -->
+
+
+<div class="progress-area">
+
+
+
+<div class="question-count">
+
+
+Question
+
+<span id="currentQuestion">
+
+1
+
+</span>
+
+
+/
+
+
+<span id="totalQuestions">
+
+10
+
+</span>
+
+
+</div>
+
+
+
+
+<div class="progress-bar">
+
+
+<div class="progress" id="progress"></div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- QUESTION CARD -->
+
+
+<div class="quiz-card">
+
+
+<h3 id="question">
+
+Loading Question...
+
+</h3>
+
+
+
+
+<div class="options" id="options">
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- BUTTON AREA -->
+
+
+<div class="button-area">
+
+
+<button id="previousBtn">
+
+Previous
+
+</button>
+
+
+
+<button id="nextBtn">
+
+Next
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ===============================
+        QUESTION DATABASE
+================================ -->
+
+
+<script src="gk.js"></script>
+
+<script src="ca.js"></script>
+
+<script src="science.js"></script>
+
+<script src="computer.js"></script>
+
+<script src="aptitude.js"></script>
+
+<script src="maths.js"></script>
+
+<script src="reasoning.js"></script>
+
+<script src="riddles.js"></script>
+
+<script src="sports.js"></script>
+
+<script src="mixed.js"></script>
+
+
+
+
+
+<!-- ===============================
+        QUIZ ENGINE
+================================ -->
+
+
+<script src="db.js"></script>
+<script src="quiz.js"></script>
+
+
+
+<script src="nav.js"></script>
+</body>
+
+</html>

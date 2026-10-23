@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Quizora'26</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ADMIN CSS -->
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     BACKGROUND EFFECTS
+========================================== -->
+
+<div class="background">
+
+    <div class="glow glow-one"></div>
+
+    <div class="glow glow-two"></div>
+
+    <div class="grid"></div>
+
+</div>
+
+
+
+<div class="admin-wrap">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="admin-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🛠️
+            </div>
+
+            <div>
+
+                <h1>
+                    Admin Dashboard
+                </h1>
+
+                <p>
+                    Quizora'26 Management Console
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-status">
+
+            <span class="status-dot"></span>
+
+            System Online
+
+        </div>
+
+    </header>
+
+  
+
+    <!-- =========================================
+         ADMIN LOGIN
+    ========================================== -->
+
+    <section
+        class="login-card"
+        id="gate"
+    >
+
+        <div class="login-icon">
+            🔐
+        </div>
+
+
+        <h2>
+            Admin Authentication
+        </h2>
+
+
+        <p>
+            Enter your Hasura admin secret to access
+            the Quizora'26 dashboard.
+        </p>
+
+
+        <div class="secret-box">
+
+            <input
+                type="password"
+                id="secret"
+                placeholder="Enter Hasura admin secret"
+                autocomplete="off"
+            >
+
+            <button
+                onclick="unlock()"
+                class="unlock-btn"
+            >
+                <span>Unlock Dashboard</span>
+                <span>→</span>
+            </button>
+
+        </div>
+
+
+        <p
+            class="err"
+            id="err"
+        ></p>
+
+
+        <a href="categories.html" class="gate-back">← Back to Categories</a>
+
+        <div class="secure-note">
+
+            <span>🛡️</span>
+
+            <span>
+                Secure administrator access
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         DASHBOARD
+    ========================================== -->
+
+    <main
+        id="dash"
+        style="display:none"
+    >
+
+    <!-- BACK TO CATEGORIES -->
+<div class="back-bar">
+
+    <button
+        class="back-btn"
+        onclick="location.href='categories.html'"
+    >
+        <span>←</span>
+        <span>Back </span>
+    </button>
+
+</div>
+        <!-- =====================================
+             WELCOME BAR
+        ====================================== -->
+
+        <div class="welcome-bar">
+
+            <div>
+
+                <span class="eyebrow">
+                    OVERVIEW
+                </span>
+
+                <h2>
+                    Quizora'26 Overview
+                </h2>
+
+                <p>
+                    Monitor participants, quiz activity,
+                    performance and certificates.
+                </p>
+
+            </div>
+
+
+            <div class="live-badge">
+
+                <span></span>
+
+                Live Data
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+        <section>
+
+            <div
+                class="stats-grid"
+                id="stats"
+            ></div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CATEGORY PERFORMANCE
+        ====================================== -->
+
+        <section class="dashboard-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        PERFORMANCE
+                    </span>
+
+                    <h3>
+                        Category-wise Performance
+                    </h3>
+
+                </div>
+
+                <div class="section-icon">
+                    📊
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Attempts
+                            </th>
+
+                            <th>
+                                Avg Score
+                            </th>
+
+                            <th>
+                                Highest
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="cats"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             RECENT ATTEMPTS
+        ====================================== -->
+
+        <section class="dashboard-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ACTIVITY
+                    </span>
+
+                    <h3>
+                        Recent Quiz Attempts
+                    </h3>
+
+                    <p>
+                        View and filter participant quiz activity.
+                    </p>
+
+                </div>
+
+                <div class="section-icon">
+                    👥
+                </div>
+
+            </div>
+
+
+
+            <!-- FILTER BAR -->
+
+            <div class="filter-bar">
+
+
+                <div class="search-box">
+
+                    <span>
+                        🔎
+                    </span>
+
+                    <input
+                        id="q"
+                        placeholder="Search participant name..."
+                        oninput="render()"
+                    >
+
+                </div>
+
+
+                <select
+                    id="f"
+                    onchange="render()"
+                >
+
+                    <option value="">
+                        All Categories
+                    </option>
+
+                </select>
+
+
+                <button
+                    onclick="csv()"
+                    class="csv-btn"
+                >
+
+                    <span>
+                        ↓
+                    </span>
+
+                    Download CSV
+
+                </button>
+
+            </div>
+
+
+
+            <!-- TABLE -->
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Participant
+                            </th>
+
+                            <th>
+                                DOB
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Score
+                            </th>
+
+                            <th>
+                                Time
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Certificate
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="rows"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <span>
+            Quizora'26
+        </span>
+
+        <span>
+            •
+        </span>
+
+        <span>
+            Admin Management System
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+
+<script src="db.js"></script>
+
+
+<script>
+
+let S = null;
+
+let attempts = [];
+
+const $ = id =>
+    document.getElementById(id);
+
+
+
+/* =========================================================
+   UNLOCK ADMIN DASHBOARD
+========================================================= */
+
+async function unlock() {
+
+    S = $("secret").value.trim();
+
+
+    if (!S) {
+
+        $("err").textContent =
+            "Please enter the Hasura admin secret.";
+
+        $("secret").focus();
+
+        return;
+
+    }
+
+
+    $("err").textContent =
+        "Authenticating...";
+
+
+    try {
+
+        const d = await gql(`
+
+            query {
+
+                participants {
+
+                    first_name
+
+                }
+
+
+                quiz_attempts(
+
+                    order_by: {
+                        attempted_at: desc
+                    }
+
+                    limit: 500
+
+                ) {
+
+                    score
+
+                    total
+
+                    time_taken
+
+                    attempted_at
+
+
+                    public_participant {
+
+                        first_name
+
+                        last_name
+
+                        dob
+
+                    }
+
+
+                    public_category {
+
+                        name
+
+                    }
+
+
+                    public_certificate {
+
+                        certificate_code
+
+                    }
+
+                }
+
+
+                certificates {
+
+                    certificate_code
+
+                }
+
+
+                categories(
+
+                    order_by: {
+                        name: asc
+                    }
+
+                ) {
+
+                    name
+
+                }
+
+            }
+
+        `, {}, S);
+
+
+
+        /* =============================================
+           BASIC DATA
+        ============================================= */
+
+        const participants =
+            d.participants || [];
+
+
+        attempts =
+            d.quiz_attempts || [];
+
+
+        const certificates =
+            d.certificates || [];
+
+
+        const categories =
+            d.categories || [];
+
+
+
+        /* =============================================
+           AVERAGE SCORE
+        ============================================= */
+
+        let totalPercentage = 0;
+
+        let validAttempts = 0;
+
+
+        attempts.forEach(a => {
+
+            if (
+
+                typeof a.score === "number" &&
+
+                typeof a.total === "number" &&
+
+                a.total > 0
+
+            ) {
+
+                totalPercentage +=
+                    (a.score / a.total) * 100;
+
+                validAttempts++;
+
+            }
+
+        });
+
+
+        const averageScore =
+
+            validAttempts > 0
+
+                ? Math.round(
+                    totalPercentage /
+                    validAttempts
+                )
+
+                : 0;
+
+
+
+        /* =============================================
+           STATISTICS
+        ============================================= */
+
+        $("stats").innerHTML = [
+
+            [
+                participants.length,
+                "Participants",
+                "👥"
+            ],
+
+            [
+                attempts.length,
+                "Quiz Attempts",
+                "📝"
+            ],
+
+            [
+                averageScore + "%",
+                "Average Score",
+                "🎯"
+            ],
+
+            [
+                certificates.length,
+                "Certificates Issued",
+                "🏆"
+            ]
+
+        ]
+
+        .map(x => `
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    ${x[2]}
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        ${x[1]}
+                    </span>
+
+                    <strong>
+                        ${x[0]}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        `)
+
+        .join("");
+
+
+
+        /* =============================================
+           CATEGORY PERFORMANCE
+        ============================================= */
+
+        $("cats").innerHTML =
+
+            categories.map(category => {
+
+
+                const categoryAttempts =
+
+                    attempts.filter(a =>
+
+                        a.public_category &&
+
+                        a.public_category.name ===
+                        category.name
+
+                    );
+
+
+                if (!categoryAttempts.length) {
+
+                    return `
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    ${category.name}
+                                </strong>
+                            </td>
+
+                            <td>
+                                0
+                            </td>
+
+                            <td>
+                                <span class="muted">
+                                    —
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="muted">
+                                    —
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    `;
+
+                }
+
+
+                let percentageTotal = 0;
+
+                let count = 0;
+
+                let highest = null;
+
+
+                categoryAttempts.forEach(a => {
+
+
+                    if (
+
+                        typeof a.score ===
+                        "number" &&
+
+                        typeof a.total ===
+                        "number" &&
+
+                        a.total > 0
+
+                    ) {
+
+                        percentageTotal +=
+
+                            (a.score /
+                             a.total) * 100;
+
+                        count++;
+
+                    }
+
+
+                    if (
+
+                        highest === null ||
+
+                        a.score > highest
+
+                    ) {
+
+                        highest = a.score;
+
+                    }
+
+                });
+
+
+                const average =
+
+                    count > 0
+
+                        ? (
+                            percentageTotal /
+                            count
+                        ).toFixed(1) + "%"
+
+                        : "-";
+
+
+                return `
+
+                    <tr>
+
+                        <td>
+
+                            <strong>
+                                ${category.name}
+                            </strong>
+
+                        </td>
+
+                        <td>
+
+                            <span class="attempt-pill">
+                                ${categoryAttempts.length}
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <span class="score-text">
+                                ${average}
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <span class="highest-score">
+                                ${highest ?? "-"}
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            })
+
+            .join("");
+
+
+
+        /* =============================================
+           CATEGORY FILTER
+        ============================================= */
+
+        $("f").innerHTML = `
+
+            <option value="">
+                All Categories
+            </option>
+
+        `;
+
+
+        $("f").innerHTML +=
+
+            categories.map(c => `
+
+                <option value="${c.name}">
+                    ${c.name}
+                </option>
+
+            `)
+
+            .join("");
+
+
+
+        /* =============================================
+           SHOW DASHBOARD
+        ============================================= */
+
+        $("gate").style.display =
+            "none";
+
+
+        $("dash").style.display =
+            "block";
+
+
+        render();
+
+
+    }
+
+    catch (e) {
+
+        console.error(e);
+
+
+        $("err").textContent =
+            "Access failed: " + e.message;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   FILTER DATA
+========================================================= */
+
+function view() {
+
+
+    const q =
+
+        $("q").value
+            .toLowerCase()
+            .trim();
+
+
+    const f =
+        $("f").value;
+
+
+    return attempts.filter(a => {
+
+
+        const participant =
+            a.public_participant || {};
+
+
+        const category =
+            a.public_category || {};
+
+
+        const name =
+
+            (
+
+                (participant.first_name || "") +
+
+                " " +
+
+                (participant.last_name || "")
+
+            )
+
+            .toLowerCase();
+
+
+        return (
+
+            (!f ||
+             category.name === f)
+
+            &&
+
+            name.includes(q)
+
+        );
+
+    });
+
+}
+
+
+
+/* =========================================================
+   RENDER ATTEMPTS
+========================================================= */
+
+function render() {
+
+
+    const data =
+        view();
+
+
+    $("rows").innerHTML =
+
+        data.map(a => {
+
+
+            const participant =
+                a.public_participant || {};
+
+
+            const category =
+                a.public_category || {};
+
+
+            const certificate =
+                a.public_certificate ||
+                null;
+
+
+            const firstName =
+                participant.first_name || "";
+
+
+            const lastName =
+                participant.last_name || "";
+
+
+            const dob =
+                participant.dob || "—";
+
+
+            const categoryName =
+                category.name ||
+                "Unknown";
+
+
+            const certificateCode =
+
+                certificate &&
+                certificate.certificate_code
+
+                    ? certificate.certificate_code
+
+                    : "—";
+
+
+            let date = "—";
+
+
+            if (a.attempted_at) {
+
+                date =
+
+                    new Date(
+                        a.attempted_at
+                    )
+                    .toLocaleString();
+
+            }
+
+
+            return `
+
+                <tr>
+
+                    <td>
+
+                        <div class="participant">
+
+                            <div class="avatar">
+
+                                ${(
+                                    firstName
+                                    .charAt(0) ||
+                                    "?"
+                                ).toUpperCase()}
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    ${firstName}
+                                    ${lastName}
+                                </strong>
+
+                                <small>
+                                    Participant
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+
+                    <td>
+                        ${dob}
+                    </td>
+
+
+                    <td>
+
+                        <span class="category-tag">
+
+                            ${categoryName}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="score-badge">
+
+                            ${a.score}/${a.total}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        ${a.time_taken ?? "—"} s
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="date-text">
+
+                            ${date}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+                            certificateCode !== "—"
+
+                                ? `<span class="certificate">
+                                    🏆 ${certificateCode}
+                                  </span>`
+
+                                : `<span class="muted">
+                                    —
+                                  </span>`
+                        }
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        })
+
+        .join("");
+
+
+    if (!data.length) {
+
+        $("rows").innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="7"
+                    class="empty"
+                >
+
+                    🔍 No matching attempts found
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   DOWNLOAD CSV
+========================================================= */
+
+function csv() {
+
+
+    const data =
+        view();
+
+
+    const rows = [
+
+        [
+
+            "Name",
+
+            "DOB",
+
+            "Category",
+
+            "Score",
+
+            "Total",
+
+            "Time",
+
+            "Date",
+
+            "Certificate"
+
+        ]
+
+    ];
+
+
+    data.forEach(a => {
+
+
+        const participant =
+            a.public_participant || {};
+
+
+        const category =
+            a.public_category || {};
+
+
+        const certificate =
+            a.public_certificate ||
+            null;
+
+
+        rows.push([
+
+
+            (
+
+                (participant.first_name || "") +
+
+                " " +
+
+                (participant.last_name || "")
+
+            )
+
+            .trim(),
+
+
+            participant.dob || "",
+
+
+            category.name || "",
+
+
+            a.score ?? "",
+
+
+            a.total ?? "",
+
+
+            a.time_taken ?? "",
+
+
+            a.attempted_at || "",
+
+
+            certificate &&
+            certificate.certificate_code
+
+                ? certificate.certificate_code
+
+                : ""
+
+        ]);
+
+    });
+
+
+    const csvContent =
+
+        rows
+
+            .map(row =>
+
+                row
+
+                    .map(value =>
+
+                        `"${String(value)
+                            .replace(/"/g, '""')}"`
+                    )
+
+                    .join(",")
+
+            )
+
+            .join("\n");
+
+
+    const blob =
+
+        new Blob(
+
+            [csvContent],
+
+            {
+                type:
+                    "text/csv"
+            }
+
+        );
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        URL.createObjectURL(blob);
+
+
+    link.download =
+        "quizora_attempts.csv";
+
+
+    link.click();
+
+
+    URL.revokeObjectURL(
+        link.href
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

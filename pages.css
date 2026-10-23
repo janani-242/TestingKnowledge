@@ -1,0 +1,1099 @@
+/* =========================================================
+   QUIZORA'26 — PREMIUM LEADERBOARD
+   WHITE + BLUE + SILVER THEME
+   Background: ALWAYS WHITE
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --white: #ffffff;
+
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --blue-deep: #172554;
+
+    --blue-soft: #eff6ff;
+    --blue-soft-2: #dbeafe;
+
+    --text: #172033;
+    --text-light: #64748b;
+    --text-muted: #94a3b8;
+
+    --border: #e5eaf1;
+    --border-dark: #d6dee9;
+
+    --surface: #f8fafc;
+
+    --gold: #d99a00;
+    --gold-bg: #fff8df;
+    --gold-border: #fde68a;
+
+    --silver: #64748b;
+    --silver-bg: #f1f5f9;
+    --silver-border: #dbe2ea;
+
+    --bronze: #b45309;
+    --bronze-bg: #fff7ed;
+    --bronze-border: #fed7aa;
+
+    --green: #16a34a;
+    --green-bg: #ecfdf3;
+    --green-border: #bbf7d0;
+
+    --shadow-small:
+        0 4px 14px rgba(30, 64, 175, 0.06);
+
+    --shadow:
+        0 10px 30px rgba(30, 64, 175, 0.09);
+
+    --shadow-large:
+        0 20px 50px rgba(30, 64, 175, 0.12);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    font-family: "Poppins", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 420px;
+    height: 420px;
+
+    top: -220px;
+    right: -170px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    bottom: -190px;
+    left: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(96, 165, 250, 0.07),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.wrap {
+
+    width: min(1180px, 92%);
+
+    margin: 0 auto;
+
+    padding: 55px 0 50px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.wrap > h1 {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    color: var(--blue-deep);
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.sub {
+
+    margin-top: 8px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TOP CONTROLS
+========================================================= */
+
+.bar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-top: 28px;
+
+    margin-bottom: 24px;
+
+    padding: 12px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow-small);
+}
+
+
+/* =========================================================
+   CATEGORY SELECT
+========================================================= */
+
+#cat {
+
+    width: 260px;
+
+    height: 46px;
+
+    padding: 0 15px;
+
+    border: 1px solid var(--border-dark);
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#cat:hover {
+
+    border-color: #b8c5d5;
+}
+
+
+#cat:focus {
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.09);
+}
+
+
+/* =========================================================
+   TAKE QUIZ BUTTON
+========================================================= */
+
+.bar button {
+
+    height: 46px;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--blue-dark)
+        );
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(37, 99, 235, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.bar button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 24px rgba(37, 99, 235, 0.27);
+}
+
+
+.bar button:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   LEADERBOARD CARD
+========================================================= */
+
+.card {
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 8px;
+
+    box-shadow: var(--shadow-large);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.card table {
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.card thead {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc,
+            #f4f7fa
+        );
+}
+
+
+.card th {
+
+    padding: 16px 18px;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.card th:first-child {
+
+    text-align: center;
+
+    width: 70px;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.card td {
+
+    padding: 17px 18px;
+
+    color: #475569;
+
+    font-size: 12px;
+
+    border-bottom: 1px solid #f0f2f5;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+
+.card tbody tr {
+
+    background: #ffffff;
+
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+.card tbody tr:hover {
+
+    background: #f8fbff;
+}
+
+
+.card tbody tr:last-child td {
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   RANK
+========================================================= */
+
+.card tbody td:first-child {
+
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TOP 3 RANKS
+========================================================= */
+
+/* GOLD — 1 */
+
+.card tbody tr:nth-child(1)
+td:first-child {
+
+    color: #b77900;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+.card tbody tr:nth-child(1)
+td:first-child::before {
+
+    content: "🏆";
+
+    margin-right: 3px;
+
+    font-size: 16px;
+}
+
+
+/* SILVER — 2 */
+
+.card tbody tr:nth-child(2)
+td:first-child {
+
+    color: #64748b;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.card tbody tr:nth-child(2)
+td:first-child::before {
+
+    content: "🥈";
+
+    margin-right: 3px;
+
+    font-size: 15px;
+}
+
+
+/* BRONZE — 3 */
+
+.card tbody tr:nth-child(3)
+td:first-child {
+
+    color: #b45309;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.card tbody tr:nth-child(3)
+td:first-child::before {
+
+    content: "🥉";
+
+    margin-right: 3px;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   PLAYER NAME
+========================================================= */
+
+.card tbody td:nth-child(2) {
+
+    color: var(--blue-deep);
+
+    font-weight: 600;
+
+    min-width: 190px;
+}
+
+
+.card tbody td:nth-child(2)::first-letter {
+
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.card tbody td:nth-child(3) {
+
+    color: var(--blue);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.card tbody td:nth-child(3)::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #60a5fa;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.card tbody td:nth-child(4) {
+
+    font-weight: 700;
+
+    color: var(--blue);
+}
+
+
+.card tbody td:nth-child(4) {
+
+    position: relative;
+}
+
+
+.card tbody td:nth-child(4)::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 30px;
+    height: 25px;
+
+    margin-right: -25px;
+
+    border-radius: 7px;
+
+    background: var(--blue-soft);
+
+    vertical-align: middle;
+
+    transform: translateX(-4px);
+
+    opacity: 0.9;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   TIME
+========================================================= */
+
+.card tbody td:nth-child(5) {
+
+    color: #64748b;
+
+    font-weight: 500;
+}
+
+
+.card tbody td:nth-child(5)::after {
+
+    content: " sec";
+
+    color: #a0aaba;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   TOP 1 ROW HIGHLIGHT
+========================================================= */
+
+.card tbody tr:nth-child(1) {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 248, 223, 0.55),
+            #ffffff 35%
+        );
+}
+
+
+.card tbody tr:nth-child(1):hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 248, 223, 0.85),
+            #f8fbff 55%
+        );
+}
+
+
+/* =========================================================
+   TOP 2 ROW
+========================================================= */
+
+.card tbody tr:nth-child(2) {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(241, 245, 249, 0.7),
+            #ffffff 40%
+        );
+}
+
+
+/* =========================================================
+   TOP 3 ROW
+========================================================= */
+
+.card tbody tr:nth-child(3) {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 247, 237, 0.6),
+            #ffffff 40%
+        );
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.card tbody tr td[colspan] {
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.err {
+
+    min-height: 20px;
+
+    margin-top: 13px;
+
+    padding-left: 4px;
+
+    color: #dc2626;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   TABLE ANIMATION
+========================================================= */
+
+.card tbody tr {
+
+    animation:
+        rowAppear 0.35s ease both;
+}
+
+
+.card tbody tr:nth-child(1) {
+    animation-delay: 0.03s;
+}
+
+.card tbody tr:nth-child(2) {
+    animation-delay: 0.06s;
+}
+
+.card tbody tr:nth-child(3) {
+    animation-delay: 0.09s;
+}
+
+.card tbody tr:nth-child(4) {
+    animation-delay: 0.12s;
+}
+
+.card tbody tr:nth-child(5) {
+    animation-delay: 0.15s;
+}
+
+.card tbody tr:nth-child(6) {
+    animation-delay: 0.18s;
+}
+
+.card tbody tr:nth-child(7) {
+    animation-delay: 0.21s;
+}
+
+.card tbody tr:nth-child(8) {
+    animation-delay: 0.24s;
+}
+
+.card tbody tr:nth-child(9) {
+    animation-delay: 0.27s;
+}
+
+.card tbody tr:nth-child(10) {
+    animation-delay: 0.30s;
+}
+
+
+@keyframes rowAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(6px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+    height: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #f8fafc;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #94a3b8;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+
+    background: rgba(37, 99, 235, 0.14);
+
+    color: var(--blue-deep);
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+button:focus-visible,
+select:focus-visible {
+
+    outline: 3px solid rgba(37, 99, 235, 0.14);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .wrap {
+
+        width: 94%;
+
+        padding-top: 40px;
+    }
+
+
+    .bar {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    #cat {
+
+        width: 100%;
+    }
+
+
+    .bar button {
+
+        width: 100%;
+    }
+
+
+    .card {
+
+        padding: 6px;
+
+        border-radius: 18px;
+    }
+
+
+    .card table {
+
+        min-width: 760px;
+    }
+
+
+    .card {
+
+        overflow-x: auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .wrap {
+
+        width: 94%;
+
+        padding: 30px 0 35px;
+    }
+
+
+    .wrap > h1 {
+
+        font-size: 28px;
+
+        gap: 9px;
+    }
+
+
+    .sub {
+
+        font-size: 11px;
+
+        margin-top: 7px;
+    }
+
+
+    .bar {
+
+        margin-top: 22px;
+
+        padding: 9px;
+
+        border-radius: 14px;
+    }
+
+
+    .card {
+
+        border-radius: 17px;
+
+        box-shadow: var(--shadow);
+    }
+
+
+    .card table {
+
+        min-width: 760px;
+    }
+
+
+    .card th {
+
+        padding: 13px 14px;
+
+        font-size: 9px;
+    }
+
+
+    .card td {
+
+        padding: 14px;
+
+        font-size: 11px;
+    }
+
+
+    .card tbody td:nth-child(2) {
+
+        min-width: 160px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .wrap > h1 {
+
+        font-size: 25px;
+    }
+
+
+    .sub {
+
+        font-size: 10px;
+    }
+
+
+    .bar button,
+    #cat {
+
+        height: 44px;
+    }
+
+
+    .card {
+
+        padding: 4px;
+    }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    body {
+
+        background: #ffffff !important;
+    }
+
+
+    body::before,
+    body::after {
+
+        display: none;
+    }
+
+
+    .bar {
+
+        display: none;
+    }
+
+
+    .card {
+
+        box-shadow: none;
+
+        border: 1px solid #d7dee8;
+    }
+}
+
+/* ==========================================
+   ADDED: leaderboard responsive safety
+========================================== */
+.card{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.card table{ width:100%; min-width:480px; }
+@media (max-width:600px){
+    .card th, .card td{ padding:10px 8px; font-size:13px; }
+}

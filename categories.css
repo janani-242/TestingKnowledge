@@ -1,0 +1,622 @@
+/* =====================================
+   QUIZORA
+   categories.css
+===================================== */
+
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+
+
+body{
+
+    min-height:100vh;
+
+    background:#f8fafc;
+
+    color:#0F172A;
+
+}
+
+
+
+
+
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+
+.container{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:40px auto;
+
+}
+
+
+
+
+
+
+
+/* ===========================
+   HEADER
+=========================== */
+
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+
+
+.header h1{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:#0F172A;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.header p{
+
+    font-size:17px;
+
+    color:#64748B;
+
+}
+
+
+
+
+
+
+
+
+/* ===========================
+   CATEGORY GRID
+=========================== */
+
+
+.category-container{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+
+
+/* ===========================
+   CATEGORY CARD
+=========================== */
+
+
+.category-card{
+
+
+    background:#ffffff;
+
+
+    border:2px solid #E2E8F0;
+
+
+    border-radius:22px;
+
+
+    padding:32px 22px;
+
+
+    text-align:center;
+
+
+    cursor:pointer;
+
+
+    transition:.35s ease;
+
+
+    box-shadow:
+
+    0 10px 25px rgba(15,23,42,.06);
+
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+/* TOP SHINE EFFECT */
+
+
+.category-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    left:-100%;
+
+
+    width:100%;
+
+
+    height:4px;
+
+
+    background:#0F172A;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.category-card:hover::before{
+
+
+    left:0;
+
+
+}
+
+
+
+
+
+
+/* HOVER */
+
+
+.category-card:hover{
+
+
+    transform:translateY(-10px);
+
+
+    border-color:#0F172A;
+
+
+    box-shadow:
+
+    0 20px 45px rgba(15,23,42,.15);
+
+
+}
+
+
+
+
+
+
+
+/* ICON */
+
+
+.category-card .icon{
+
+
+    display:block;
+
+
+    font-size:52px;
+
+
+    margin-bottom:18px;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+.category-card:hover .icon{
+
+
+    transform:scale(1.15);
+
+
+}
+
+
+
+
+
+
+/* TITLE */
+
+
+.category-card h3{
+
+
+    font-size:20px;
+
+
+    font-weight:600;
+
+
+    color:#0F172A;
+
+
+    line-height:1.4;
+
+
+}
+
+
+
+
+
+
+
+/* ===========================
+   ACTIVE CLICK EFFECT
+=========================== */
+
+
+.category-card.active{
+
+
+    background:#0F172A;
+
+
+    border-color:#0F172A;
+
+
+    transform:scale(.96);
+
+
+}
+
+
+
+.category-card.active h3{
+
+
+    color:#ffffff;
+
+
+}
+
+
+
+.category-card.active .icon{
+
+
+    transform:scale(1.1);
+
+
+}
+
+
+
+
+
+
+
+/* ===========================
+   CLICK RIPPLE
+=========================== */
+
+
+.category-card:active{
+
+
+    transform:scale(.92);
+
+
+}
+
+
+
+
+
+
+
+/* ===========================
+   TABLET
+=========================== */
+
+
+@media(max-width:1000px){
+
+
+.category-container{
+
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+
+    width:94%;
+
+
+    margin:25px auto;
+
+
+}
+
+
+
+.header{
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+.header h1{
+
+
+    font-size:30px;
+
+
+}
+
+
+
+.header p{
+
+
+    font-size:15px;
+
+
+}
+
+
+
+.category-container{
+
+
+    grid-template-columns:1fr;
+
+
+    gap:18px;
+
+
+}
+
+
+
+
+.category-card{
+
+
+    padding:25px 18px;
+
+
+}
+
+
+
+.category-card .icon{
+
+
+    font-size:44px;
+
+
+}
+
+
+
+.category-card h3{
+
+
+    font-size:18px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+
+@media(max-width:420px){
+
+
+.header h1{
+
+
+    font-size:26px;
+
+
+}
+
+
+
+.category-card{
+
+
+    border-radius:18px;
+
+
+}
+
+
+
+.category-card .icon{
+
+
+    font-size:40px;
+
+
+}
+
+
+
+}
+/* =========================================
+   LEADERBOARD LINK
+========================================= */
+
+.header > p a[href="leaderboard.html"] {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 8px;
+
+    padding: 11px 20px;
+
+    background: #ffffff;
+
+    color: #2563eb;
+
+    border: 1px solid #dbe4f0;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: .2px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(37, 99, 235, .08);
+
+    transition:
+        all .25s ease;
+
+}
+
+
+/* HOVER */
+
+.header > p a[href="leaderboard.html"]:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: #ffffff;
+
+    border-color:
+        #2563eb;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(37, 99, 235, .20);
+
+}
+
+
+/* CLICK */
+
+.header > p a[href="leaderboard.html"]:active {
+
+    transform:
+        translateY(0);
+
+    box-shadow:
+        0 5px 12px
+        rgba(37, 99, 235, .15);
+
+}
